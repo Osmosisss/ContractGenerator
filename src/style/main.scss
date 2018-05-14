@@ -1,28 +1,3 @@
-$mainFont:'Open Sans', sans-serif;
-$patrickPink:orchid;
-$formWhite: whitesmoke;
-
-body {
-    background-color:#303030;
-}
-.background-style {
-    width: 88px;
-    height: 111px;
-    background-color: $patrickPink;
-}
-.osmosis-heading {
-    text-align: center;
-    margin: 20px;
-    padding-top: 33px;
-    font-family: $mainFont;
-    font-size: 4rem;
-    color: $formWhite;
-}
-
-.subheading {
-    margin: auto;
-    text-align: center;
-    font-size: 3rem;
-    font-family: $mainFont;
-    color: $formWhite;
-}
+@import 'variables';
+@import 'components/recording_form';
+@import 'header'

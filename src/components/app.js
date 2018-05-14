@@ -11,7 +11,7 @@ export default class App extends Component {
           </div>
         </div>
         <div className="subheading">
-              Agreement
+              Agreement Form
         </div>
         <Recording />
       </div>

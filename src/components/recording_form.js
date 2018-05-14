@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {
     Col,
-    Row
+    Row,
+    Card
 } from 'reactstrap';
 
 class Recording extends Component {
@@ -26,68 +27,60 @@ class Recording extends Component {
 
     render () {
         return (
-            <Row>
-                <Col md='3' className="input-wrapper">
+            <div className="card-wrapper">
+                <Card>
                     <Row>
-                        <Col md='2'>
-                          <label className="orchid-label">1</label>
+                        <Col md='3' className="input-wrapper">
+                            <Row>
+                                <Col md='12'>
+                                    <input placeholder='First Name' type='text' onChange={this.handleChange({inputTitle: 'firstName'})}/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md='12'>
+                                    <div className="input-description">First Name</div>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col md='10'>
-                            <input placeholder='First Name' type='text' onChange={this.handleChange({inputTitle: 'firstName'})}/>
+                        <Col md='3' className="input-wrapper">
+                            <Row>
+                                <Col md='12'>
+                                    <input placeholder='Middle Name' type='text' onChange={this.handleChange({inputTitle: 'middleName'})}/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md='12'>
+                                    <div className="input-description">Middle Name</div>
+                                </Col>
+                            </Row>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col md='12'>
-                            <div className="input-description">First Name</div>
+                        <Col md='3' className="input-wrapper">
+                            <Row>
+                                <Col md='12'>
+                                    <input placeholder='Last Name' type='text' onChange={this.handleChange({inputTitle: 'lastName'})}/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md='12'>
+                                    <div className="input-description">Last Name</div>
+                                </Col>
+                            </Row>
                         </Col>
-                    </Row>
-                </Col>
-                <Col md='3' className="input-wrapper">
-                    <Row>
-                        <Col md='2'>
-                          <label className="orchid-label">1</label>
+                        <Col md='3' className="input-wrapper">
+                            <Row>
+                                <Col md='12'>
+                                    <input placeholder='Service' type='text' onChange={this.handleChange({inputTitle: 'service'})}/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md='12'>
+                                    <div className="input-description">Service</div>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col md='10'>
-                            <input placeholder='Middle Name' type='text' onChange={this.handleChange({inputTitle: 'middleName'})}/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md='12'>
-                            <div className="input-description">Middle Name</div>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md='3' className="input-wrapper">
-                    <Row>
-                        <Col md='2'>
-                          <label className="orchid-label">1</label>
-                        </Col>
-                        <Col md='10'>
-                            <input placeholder='Last Name' type='text' onChange={this.handleChange({inputTitle: 'lastName'})}/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md='12'>
-                            <div className="input-description">Last Name</div>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md='3' className="input-wrapper">
-                    <Row>
-                        <Col md='2'>
-                          <label className="orchid-label">1</label>
-                        </Col>
-                        <Col md='10'>
-                            <input placeholder='Service' type='text' onChange={this.handleChange({inputTitle: 'service'})}/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md='12'>
-                            <div className="input-description">Service</div>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+                    </Row>                   
+                </Card>
+            </div> 
         );
     }
 }

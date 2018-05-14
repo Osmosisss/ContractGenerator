@@ -1,0 +1,25 @@
+body {
+    background-color: $mainGrey;
+}
+.background-style {
+    width: 88px;
+    height: 111px;
+    background-color: $patrickPink;
+}
+.osmosis-heading {
+    text-align: center;
+    margin: 20px;
+    padding-top: 33px;
+    font-family: $mainFont;
+    font-size: 4rem;
+    color: $formWhite;
+}
+
+.subheading {
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+    font-family: $mainFont;
+    color: White;
+    padding: 0px 0px 10px 0px;
+}
