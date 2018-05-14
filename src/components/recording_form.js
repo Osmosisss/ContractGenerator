@@ -52,6 +52,27 @@ class Recording extends Component {
         this.setState({completedForm: true});
         event.preventDefault();
     }.bind(this);
+
+    handleClick = function() {
+        this.setState({
+            completedForm: false,
+            firstName:'',
+            middleName:'',
+            lastName:'',
+            service:'',
+            project:'',
+            date:'',
+            artist:'',
+            organization:''
+        });
+    }.bind(this)
+
+    renderButton = function() {
+        if(this.state.completedForm){
+            return <a className="clear-button" onClick={this.handleClick}>Clear</a>
+        }
+        return <input type="submit" className="execute-button" value="Execute"/>
+    }
  
     render () {
 
@@ -78,7 +99,7 @@ class Recording extends Component {
                         </Row>
                         <Row>
                             <Col md="12" className="button-wrapper">
-                                <input type="submit" className="execute-button" value="Execute"/>
+                                {this.renderButton()}
                             </Col>
                         </Row>  
                     </form>                 
