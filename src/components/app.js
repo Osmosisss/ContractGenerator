@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Recording from './recording_form';
 
 export default class App extends Component {
   render() {
@@ -12,6 +13,7 @@ export default class App extends Component {
         <div className="subheading">
               Recording Agreement
         </div>
+        <Recording />
       </div>
     );
   }
