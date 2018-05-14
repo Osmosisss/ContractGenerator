@@ -51,7 +51,7 @@ input {
 
 .clear-button {
     @include buttonStyles;
-    background-color: #DDA0DD;
+    background-color: rgba(190, 85, 168, 0.26);
     padding-top: 9px;
     text-align: center;
 }

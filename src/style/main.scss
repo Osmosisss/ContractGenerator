@@ -1,7 +1,10 @@
 @import 'variables';
 @import 'mixins';
-@import 'components/recording_form';
+
 @import 'header';
+
+@import 'components/recording_form';
+@import 'components/recording_content';
 
 body {
     background-color: $mainGrey;

@@ -6,6 +6,8 @@ import {
 } from 'reactstrap';
 import _ from 'lodash';
 
+import RecordingContent from './recording_content';
+
 function RecordingInput(props) {
     return (
             <Col md='3' className="input-wrapper">
@@ -30,14 +32,14 @@ class Recording extends Component {
 
         this.state = {
             completedForm: false,
-            firstName:'',
-            middleName:'',
-            lastName:'',
-            service:'',
-            project:'',
             date:'',
-            artist:'',
-            organization:''
+            fullName:'',
+            company:'',
+            address:'',
+            jobNum:'',
+            project:'',
+            fees:'',
+            upfrontFee:''
         }
     }
 
@@ -56,14 +58,14 @@ class Recording extends Component {
     handleClick = function() {
         this.setState({
             completedForm: false,
-            firstName:'',
-            middleName:'',
-            lastName:'',
-            service:'',
-            project:'',
             date:'',
-            artist:'',
-            organization:''
+            fullName:'',
+            company:'',
+            address:'',
+            jobNum:'',
+            project:'',
+            fees:'',
+            upfrontFee:''
         });
     }.bind(this)
 
@@ -77,14 +79,14 @@ class Recording extends Component {
     render () {
 
         this.inputData = [
-            {placeholder:'First Name', prop: 'firstName', state: this.state.firstName},
-            {placeholder:'Middle Name', prop: 'middleName', state: this.state.middleName},
-            {placeholder:'Last Name', prop: 'lastName', state: this.state.lastName},
-            {placeholder:'Service', prop: 'service', state: this.state.service},
-            {placeholder:'Project', prop: 'project', state: this.state.project},
             {placeholder:'Date', prop: 'date', state: this.state.date},
-            {placeholder:'Artist', prop: 'artist', state: this.state.artist},
-            {placeholder:'Organization', prop: 'organization', state: this.state.organization}
+            {placeholder:'Full Name', prop: 'fullName', state: this.state.fullName},
+            {placeholder:'Company', prop: 'company', state: this.state.company},
+            {placeholder:'Address', prop: 'address', state: this.state.address},
+            {placeholder:'Job Number', prop: 'jobNum', state: this.state.jobNum},
+            {placeholder:'Project', prop: 'project', state: this.state.project},
+            {placeholder:'Fees', prop: 'fees', state: this.state.fees},
+            {placeholder:'Upfront Fee', prop: 'upfrontFee', state: this.state.upfrontFee}
         ]
         return (
             <div className="card-wrapper">
@@ -102,7 +104,8 @@ class Recording extends Component {
                                 {this.renderButton()}
                             </Col>
                         </Row>  
-                    </form>                 
+                    </form>
+                    <RecordingContent data={this.state}/>                 
                 </Card>
             </div> 
         );
