@@ -29,6 +29,7 @@ class Recording extends Component {
         super(props)
 
         this.state = {
+            completedForm: false,
             firstName:'',
             middleName:'',
             lastName:'',
@@ -47,6 +48,11 @@ class Recording extends Component {
         }.bind(this);
     }
 
+    handleSubmit = function(event) {
+        this.setState({completedForm: true});
+        event.preventDefault();
+    }.bind(this);
+ 
     render () {
 
         this.inputData = [
@@ -62,13 +68,20 @@ class Recording extends Component {
         return (
             <div className="card-wrapper">
                 <Card>
-                    <Row>
-                        {
-                        _.map(this.inputData, (data, indexKey) => {
-                            return <RecordingInput key={indexKey} index={indexKey + 1} state={data.state} placeholder={data.placeholder} onChange={this.handleChange({inputTitle: data.prop})} />
-                        })
-                        }
-                    </Row>                   
+                    <form onSubmit={this.handleSubmit} id="recording-form">
+                        <Row>
+                            {
+                            _.map(this.inputData, (data, indexKey) => {
+                                return <RecordingInput key={indexKey} index={indexKey + 1} state={data.state} placeholder={data.placeholder} onChange={this.handleChange({inputTitle: data.prop})} />
+                            })
+                            }
+                        </Row>
+                        <Row>
+                            <Col md="12" className="button-wrapper">
+                                <input type="submit" className="execute-button" value="Execute"/>
+                            </Col>
+                        </Row>  
+                    </form>                 
                 </Card>
             </div> 
         );
