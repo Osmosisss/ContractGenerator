@@ -7,7 +7,7 @@ export default class App extends Component {
       <div>
         <div className="background-style">
           <div className="osmosis-heading">
-            <h1>Osmosisss</h1>
+            <h1>Os</h1>
           </div>
         </div>
         <div className="subheading">
