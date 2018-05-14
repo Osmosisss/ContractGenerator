@@ -4,6 +4,24 @@ import {
     Row,
     Card
 } from 'reactstrap';
+import _ from 'lodash';
+
+function RecordingInput(props) {
+    return (
+            <Col md='3' className="input-wrapper">
+                <Row>
+                    <Col md='12'>
+                        <input placeholder={props.placeholder} value={props.state} type='text' onChange={props.onChange}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md='12'>
+                        <div className="input-description">{props.placeholder}</div>
+                    </Col>
+                </Row>
+            </Col>
+    )
+}
 
 class Recording extends Component {
 
@@ -15,6 +33,10 @@ class Recording extends Component {
             middleName:'',
             lastName:'',
             service:'',
+            project:'',
+            date:'',
+            artist:'',
+            organization:''
         }
     }
 
@@ -26,58 +48,26 @@ class Recording extends Component {
     }
 
     render () {
+
+        this.inputData = [
+            {placeholder:'First Name', prop: 'firstName', state: this.state.firstName},
+            {placeholder:'Middle Name', prop: 'middleName', state: this.state.middleName},
+            {placeholder:'Last Name', prop: 'lastName', state: this.state.lastName},
+            {placeholder:'Service', prop: 'service', state: this.state.service},
+            {placeholder:'Project', prop: 'project', state: this.state.project},
+            {placeholder:'Date', prop: 'date', state: this.state.date},
+            {placeholder:'Artist', prop: 'artist', state: this.state.artist},
+            {placeholder:'Organization', prop: 'organization', state: this.state.organization}
+        ]
         return (
             <div className="card-wrapper">
                 <Card>
                     <Row>
-                        <Col md='3' className="input-wrapper">
-                            <Row>
-                                <Col md='12'>
-                                    <input placeholder='First Name' type='text' onChange={this.handleChange({inputTitle: 'firstName'})}/>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md='12'>
-                                    <div className="input-description">First Name</div>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md='3' className="input-wrapper">
-                            <Row>
-                                <Col md='12'>
-                                    <input placeholder='Middle Name' type='text' onChange={this.handleChange({inputTitle: 'middleName'})}/>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md='12'>
-                                    <div className="input-description">Middle Name</div>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md='3' className="input-wrapper">
-                            <Row>
-                                <Col md='12'>
-                                    <input placeholder='Last Name' type='text' onChange={this.handleChange({inputTitle: 'lastName'})}/>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md='12'>
-                                    <div className="input-description">Last Name</div>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md='3' className="input-wrapper">
-                            <Row>
-                                <Col md='12'>
-                                    <input placeholder='Service' type='text' onChange={this.handleChange({inputTitle: 'service'})}/>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md='12'>
-                                    <div className="input-description">Service</div>
-                                </Col>
-                            </Row>
-                        </Col>
+                        {
+                        _.map(this.inputData, (data, indexKey) => {
+                            return <RecordingInput key={indexKey} index={indexKey + 1} state={data.state} placeholder={data.placeholder} onChange={this.handleChange({inputTitle: data.prop})} />
+                        })
+                        }
                     </Row>                   
                 </Card>
             </div> 
