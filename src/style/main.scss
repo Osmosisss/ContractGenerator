@@ -1,0 +1,21 @@
+$mainFont:'Open Sans', sans-serif;
+$patrickPink:orchid;
+
+.background-style {
+    width: 88px;
+    height: 111px;
+    background-color: $patrickPink;
+}
+.osmosis-heading {
+    text-align: center;
+    margin: 20px;
+    padding-top: 33px;
+    font-family: $mainFont;
+}
+
+.subheading {
+    margin: auto;
+    text-align: center;
+    font-size: 3rem;
+    font-family: $mainFont;
+}
